@@ -17,8 +17,10 @@ public class Field {
     public void setParking(boolean tmp){isParking=tmp;}
     public boolean isParking(){return isParking;}
 
-    public void setVehicle(Vehicle tmp){vehicle=tmp;}
-    public Vehicle getVehicle(){return vehicle;}
+    public void setVehicleOnField(Vehicle tmp){vehicle=tmp;}
+    public Vehicle getVehicleFromField(){return vehicle;}
 
-    public void set
+    public void setPlatform(Platform tmp){onPlatform=tmp;}
+    public Platform getPlatform(){return onPlatform;}
+
 }
