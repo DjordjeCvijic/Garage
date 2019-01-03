@@ -9,8 +9,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
+import main.Main;
 import model.Garage;
-import view.Main;
 
 import java.io.File;
 import java.net.URL;
@@ -31,7 +31,7 @@ public class AdminSceneController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        vehicleToChoose.getItems().addAll("Car","Van","Motorcycle","Police Car","Police Van","Police MotorCycle","Fire Van","Medical Car","Medical Van");
+        vehicleToChoose.getItems().addAll("Car","Van","Motorcycle","Police Car","Police Van","Police Motorcycle","Fire Van","Medical Car","Medical Van");
         for(int i=0;i<Garage.numberOfPlatforms;i++)
             platformToChoose.getItems().add(i);
 
@@ -60,7 +60,7 @@ public class AdminSceneController implements Initializable{
             selectedVehicle=vehicleToChoose.getSelectionModel().getSelectedItem();
             selectedNumberOfPlatform=platformToChoose.getSelectionModel().getSelectedItem();
 
-            Parent root = FXMLLoader.load(getClass().getResource("view"+File.separator+"AddNewVehicleScene.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource(".."+File.separator+"view"+ File.separator+"AddNewVehicleScene.fxml"));
             Main.primaryStage.setScene(new Scene(root));
             Main.primaryStage.setTitle("Add new vehicle");
             Main.primaryStage.show();
