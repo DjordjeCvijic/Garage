@@ -1,11 +1,14 @@
 package model;
 
+import java.io.*;
+import java.util.ArrayList;
+
 public class Platform {
     private static int counter=0;
     private Field[][] fields;
     private int platformNumber;
-    private static int NUM_OF_COLUMNS=8;
-    private static int NUM_OF_ROWS=10;
+    public static int NUM_OF_COLUMNS=8;
+    public static int NUM_OF_ROWS=10;
     private int numberOfAvailableParkingFields;
     private String[][] currentMarks;
 
@@ -42,7 +45,26 @@ public class Platform {
 
     }
 
+    public static void serializationOfThePlatform(ArrayList<Platform>platforms){
+        try(ObjectOutputStream out=new ObjectOutputStream(new FileOutputStream(".."+ File.separator+"resources"+File.separator+"garaza.ser"))){
+            out.writeObject(platforms);
 
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public static ArrayList<Platform> deserializationOfThePlatform(){
+        try(ObjectInputStream in=new ObjectInputStream(new FileInputStream(".."+ File.separator+"resources"+File.separator+"garaza.ser"))){
+            ArrayList<Platform> platforms=(ArrayList<Platform>) in.readObject();
+            return platforms;
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public Field[][] getFields(){return fields;}
 
 
 

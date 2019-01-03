@@ -1,6 +1,8 @@
 package controller;
 
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,16 +11,24 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TableView;
 import main.Main;
 import model.Garage;
+import model.Platform;
+import model.Vehicle;
 
 import java.io.File;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class AdminSceneController implements Initializable{
-    @FXML private ComboBox<String> vehicleToChoose;
-    @FXML private ComboBox<Integer> platformToChoose;
+    @FXML private ComboBox<String> vehicleToChoose=new ComboBox<>();
+    @FXML private ComboBox<Integer> platformToChoose=new ComboBox<>();
+    @FXML private TableView<Vehicle> table =new TableView<>();
+    @FXML private TableView<Vehicle> staticTable;
+
+
 
 
 
@@ -28,6 +38,7 @@ public class AdminSceneController implements Initializable{
 
     public static String selectedVehicle;//vozilo koje je izabrano iz padajuceg menija
     public static int selectedNumberOfPlatform;
+    public static ObservableList<Vehicle> vehiclesForTable = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -36,7 +47,40 @@ public class AdminSceneController implements Initializable{
             platformToChoose.getItems().add(i);
 
         platformToChoose.getSelectionModel().selectFirst();
+        generateTable();
+        staticTable=table;
 
+
+
+    }
+
+    public void generateTable(){
+        File tmp=new File(".."+ File.separator+"resources"+File.separator+"garaza.ser");
+        if(tmp.exists()){
+            ArrayList<Platform> platforms=Platform.deserializationOfThePlatform();
+            int i=0;
+            for(Platform p:platforms){
+                Garage.platforms[i]=p;
+                i++;
+            }
+
+            for(i=0;i<Platform.NUM_OF_ROWS;i++){
+                for(int j=0;j<Platform.NUM_OF_COLUMNS;j++){
+                    Vehicle v=Garage.platforms[0].getFields()[i][j].getVehicleFromField();
+                    if(v!=null)
+                        vehiclesForTable.add(v);
+                }
+            }
+
+        }
+
+        setTable();
+
+
+    }
+
+    public void setTable(){
+        table.setItems(vehiclesForTable);
 
     }
 
