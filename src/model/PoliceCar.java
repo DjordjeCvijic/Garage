@@ -8,6 +8,7 @@ public class PoliceCar extends PoliceVehicle {
     public PoliceCar(String type, String chassisNum, String motorNum, String regNum, File image, int x, int y, int platformNum, boolean rotation,int numOfDoors){
         super(type, chassisNum, motorNum, regNum, image, x, y, platformNum, rotation);
         numberOfDoors=numOfDoors;
+
     }
 
     public int getNumberOfDoors(){return numberOfDoors;}

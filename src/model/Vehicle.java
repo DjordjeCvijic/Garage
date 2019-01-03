@@ -12,6 +12,7 @@ public abstract class Vehicle {
     protected int platformNumber;
     protected int x;
     protected int y;
+    private String mark="V";
 
     public Vehicle(){};
 
@@ -33,6 +34,11 @@ public abstract class Vehicle {
     public File getImage(){return image;}
     public int getX(){return x;}
     public int getY(){return y;}
+
+    public String getMark(){return mark;}
+    public void setMark(String tmp){
+        mark=tmp;
+        }
 
 
 
