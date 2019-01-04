@@ -8,8 +8,8 @@ public abstract class HighPriorityVehicle extends Vehicle{
 
     public HighPriorityVehicle(){};
 
-    public HighPriorityVehicle(String type, String chassisNum, String motorNum, String regNum, File image, int x, int y, int platformNum,boolean rotation){
-        super(type,chassisNum,motorNum,regNum,image,x,y,platformNum);
+    public HighPriorityVehicle(String name, String chassisNum, String motorNum, String regNum, File image, int x, int y, int platformNum,boolean rotation){
+        super(name,chassisNum,motorNum,regNum,image,x,y,platformNum);
         rotationOn=rotation;
     }
 

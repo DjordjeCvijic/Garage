@@ -9,9 +9,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import main.Main;
 import model.Garage;
 import model.Platform;
@@ -26,9 +27,14 @@ public class AdminSceneController implements Initializable{
     @FXML private ComboBox<String> vehicleToChoose=new ComboBox<>();
     @FXML private ComboBox<Integer> platformToChoose=new ComboBox<>();
     @FXML private TableView<Vehicle> table =new TableView<>();
-    @FXML private TableView<Vehicle> staticTable;
-
-
+    @FXML private static TableView<Vehicle> staticTable;
+    @FXML private TableColumn<Vehicle,String> vehicleName=new TableColumn<>();
+    @FXML private TableColumn<Vehicle,String> chassisNum=new TableColumn<>();
+    @FXML private TableColumn<Vehicle,String> registrationNum=new TableColumn<>();
+    @FXML private TableColumn<Vehicle, Integer> x = new TableColumn<>();
+    @FXML private TableColumn<Vehicle, Integer> y = new TableColumn<>();
+    @FXML private TableColumn<Vehicle, String> motorNum = new TableColumn<>();
+    @FXML private TableColumn<Vehicle, String> image = new TableColumn<>();
 
 
 
@@ -47,14 +53,16 @@ public class AdminSceneController implements Initializable{
             platformToChoose.getItems().add(i);
 
         platformToChoose.getSelectionModel().selectFirst();
-        generateTable();
+        initializeTableFromSerialization();
         staticTable=table;
+        table.setItems(vehiclesForTable);
+        setTable();
 
 
 
     }
 
-    public void generateTable(){
+    public void initializeTableFromSerialization(){
         File tmp=new File(".."+ File.separator+"resources"+File.separator+"garaza.ser");
         if(tmp.exists()){
             ArrayList<Platform> platforms=Platform.deserializationOfThePlatform();
@@ -74,14 +82,24 @@ public class AdminSceneController implements Initializable{
 
         }
 
-        setTable();
+
 
 
     }
 
     public void setTable(){
+        vehicleName.setCellValueFactory(new PropertyValueFactory<>("nameOfVehicle"));
+        chassisNum.setCellValueFactory(new PropertyValueFactory<>("chassisNumber"));
+        motorNum.setCellValueFactory(new PropertyValueFactory<>("motorNumber"));
+        registrationNum.setCellValueFactory(new PropertyValueFactory<>("registrationNumber"));
+        x.setCellValueFactory(new PropertyValueFactory<>("x"));
+        y.setCellValueFactory(new PropertyValueFactory<>("y"));
         table.setItems(vehiclesForTable);
 
+    }
+
+    public static void showInTable(){
+        staticTable.setItems(vehiclesForTable);
     }
 
     public void onClc(ActionEvent actionEvent) {
@@ -93,12 +111,8 @@ public class AdminSceneController implements Initializable{
 
     public void addVehicle(ActionEvent actionEvent) throws Exception {
         if(vehicleToChoose.getSelectionModel().getSelectedItem()==null){
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Information Dialog");
-            alert.setHeaderText(null);
-            alert.setContentText("You must choose type of vehicle!");
+            Main.warning("You mast choose vehicle");
 
-            alert.showAndWait();
         }
         else{
             selectedVehicle=vehicleToChoose.getSelectionModel().getSelectedItem();

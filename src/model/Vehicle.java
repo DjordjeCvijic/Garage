@@ -1,23 +1,22 @@
 package model;
 import java.io.File;
-import java.security.ProtectionDomain;
 
 
 public abstract class Vehicle {
-    protected String typeOfVehicle;//car,police car,medical..
-    protected String chassisNumber;  //1234
-    protected String motorNumber;  ///12345
-    protected String registrationNumber;  ///123-456
-    protected File image;
-    protected int platformNumber;
-    protected int x;
-    protected int y;
+    private String nameOfVehicle;//car,police car,medical..
+    private String chassisNumber;  //1234
+    private String motorNumber;  ///12345
+    private String registrationNumber;  ///123-456
+    private File image;
+    private int platformNumber;
+    private int x;
+    private int y;
     private String mark="V";
 
     public Vehicle(){};
 
-    public Vehicle(String type,String chassisNum,String motorNum,String regNum,File image,int x,int y,int platformNum){
-        typeOfVehicle=type;
+    public Vehicle(String name,String chassisNum,String motorNum,String regNum,File image,int x,int y,int platformNum){
+        nameOfVehicle=name;
         chassisNumber=chassisNum;
         motorNumber=motorNum;
         registrationNumber=regNum;
@@ -27,19 +26,21 @@ public abstract class Vehicle {
         platformNumber=platformNum;
     }
 
-    public String getTypeOfVehicle(){return typeOfVehicle;}
+    public String getTypeOfVehicle(){return nameOfVehicle;}
     public String getChassisNumber(){return chassisNumber;}
     public String getMotorNumber(){return motorNumber;}
     public String getRegistrationNumber(){return registrationNumber;}
+    public void setNameOfVehicle(String s){nameOfVehicle=s;}
+    public String getNameOfVehicle(){return nameOfVehicle;}
     public File getImage(){return image;}
     public int getX(){return x;}
     public int getY(){return y;}
 
     public String getMark(){return mark;}
-    public void setMark(String tmp){
-        mark=tmp;
-        }
+    public void setMark(String tmp){mark=tmp;}
 
-
-
+    @Override
+    public String toString() {
+        return nameOfVehicle;
+    }
 }

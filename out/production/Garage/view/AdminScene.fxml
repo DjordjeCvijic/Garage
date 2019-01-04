@@ -7,16 +7,17 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="489.0" prefWidth="697.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminSceneController">
+<AnchorPane prefHeight="489.0" prefWidth="697.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminSceneController">
    <children>
-      <TableView layoutX="14.0" layoutY="22.0" prefHeight="311.0" prefWidth="439.0">
-        <columns>
-          <TableColumn prefWidth="75.0" text="Tip" />
-          <TableColumn prefWidth="86.39996337890625" text="brSasije" />
-            <TableColumn prefWidth="64.00006103515625" text="brReg" />
-            <TableColumn prefWidth="75.0" text="x" />
-            <TableColumn prefWidth="75.0" text="y" />
-        </columns>
+      <TableView fx:id="table" layoutX="14.0" layoutY="22.0" prefHeight="311.0" prefWidth="483.0">
+         <columns>
+            <TableColumn fx:id="vehicleName" prefWidth="75.0" text="Name" />
+            <TableColumn fx:id="chassisNum" prefWidth="75.0" text="Chassis Number" />
+            <TableColumn fx:id="registrationNum" prefWidth="75.0" text="Registration Number" />
+            <TableColumn fx:id="motorNum" prefWidth="75.0" text="Motor Number" />
+            <TableColumn prefWidth="75.0" text="X" fx:id="x" />
+            <TableColumn fx:id="y" prefWidth="75.0" text="Y" />
+         </columns>
       </TableView>
       <ComboBox fx:id="vehicleToChoose" layoutX="507.0" layoutY="92.0" prefHeight="26.0" prefWidth="138.0" />
       <Label layoutX="507.0" layoutY="47.0" prefHeight="26.0" prefWidth="138.0" text="Izaberi vozilo:" />

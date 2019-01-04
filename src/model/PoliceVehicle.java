@@ -7,8 +7,8 @@ public abstract class PoliceVehicle extends HighPriorityVehicle {
 
     public PoliceVehicle(){};
 
-    public PoliceVehicle(String type, String chassisNum, String motorNum, String regNum, File image, int x, int y, int platformNum,boolean rotation) {
-        super(type, chassisNum, motorNum, regNum, image, x, y, platformNum, rotation);
+    public PoliceVehicle(String name, String chassisNum, String motorNum, String regNum, File image, int x, int y, int platformNum,boolean rotation) {
+        super(name, chassisNum, motorNum, regNum, image, x, y, platformNum, rotation);
 
         if(rotation)
             setMark("PR");

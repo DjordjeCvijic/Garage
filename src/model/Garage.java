@@ -13,6 +13,7 @@ public class Garage {
         try(BufferedReader in=new BufferedReader(new FileReader("src"+File.separator+"resources"+ File.separator+"properties.txt"))) {
             numberOfPlatforms=Integer.valueOf(in.readLine());
             platforms=new Platform[numberOfPlatforms];
+            System.out.println("Number of platforms:"+numberOfPlatforms);
 
             for(int i=0;i<numberOfPlatforms;i++)
 

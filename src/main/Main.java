@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 import model.Garage;
 
@@ -26,6 +27,14 @@ public class Main extends Application {
     }
 
 
+    public static  void warning(String s){
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Information Dialog");
+        alert.setHeaderText(null);
+        alert.setContentText(s);
+
+        alert.showAndWait();
+    }
 
     public static void main(String[] args) {
         launch(args);

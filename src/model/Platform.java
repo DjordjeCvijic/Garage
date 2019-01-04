@@ -3,7 +3,7 @@ package model;
 import java.io.*;
 import java.util.ArrayList;
 
-public class Platform {
+public class Platform implements Serializable{
     private static int counter=0;
     private Field[][] fields;
     private int platformNumber;
@@ -13,7 +13,7 @@ public class Platform {
     private String[][] currentMarks;
 
 
-    public Platform(){
+    public Platform() {
         counter++;
         platformNumber=counter;
         fields=new Field[NUM_OF_ROWS][NUM_OF_COLUMNS];
@@ -43,6 +43,7 @@ public class Platform {
             }
         }
 
+
     }
 
     public static void serializationOfThePlatform(ArrayList<Platform>platforms){
@@ -64,7 +65,15 @@ public class Platform {
         return null;
     }
 
+    public synchronized void addVehicleToPlatform(Vehicle vehicle){
+        fields[vehicle.getX()][vehicle.getY()].setVehicleOnField(vehicle);
+        currentMarks[vehicle.getX()][vehicle.getY()]=vehicle.getMark();
+        numberOfAvailableParkingFields--;
+        fields[vehicle.getX()][vehicle.getY()].setAvailable(false);
+    }
+
     public Field[][] getFields(){return fields;}
+
 
 
 

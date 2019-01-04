@@ -6,8 +6,8 @@ public class Car extends Vehicle{
 
     private int numberOfDoors;
 
-    public Car(String type, String chassisNum, String motorNum, String regNum, File image, int x, int y, int platformNum,int numOfDoors){
-        super(type,chassisNum,motorNum,regNum,image,x,y,platformNum);
+    public Car(String name, String chassisNum, String motorNum, String regNum, File image, int x, int y, int platformNum,int numOfDoors){
+        super(name,chassisNum,motorNum,regNum,image,x,y,platformNum);
         numberOfDoors=numOfDoors;
     }
 
