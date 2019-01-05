@@ -71,6 +71,12 @@ public class Platform implements Serializable{
         numberOfAvailableParkingFields--;
         fields[vehicle.getX()][vehicle.getY()].setAvailable(false);
     }
+    public synchronized void deleteVehicleFromPlatform(Vehicle vehicle){
+        fields[vehicle.getX()][vehicle.getY()].setVehicleOnField(null);
+        currentMarks[vehicle.getX()][vehicle.getY()]="*";
+        numberOfAvailableParkingFields++;
+        fields[vehicle.getX()][vehicle.getY()].setAvailable(true);
+    }
 
     public Field[][] getFields(){return fields;}
 

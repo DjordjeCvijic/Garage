@@ -15,6 +15,11 @@
   <component name="CodeInsightWorkspaceSettings">
     <option name="optimizeImportsOnTheFly" value="true" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Garage$Main__1_.coverage" NAME="Main (1) Coverage Results" MODIFIED="1546700033133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>main.*</FILTER>
+    </SUITE>
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -64,32 +69,22 @@
       <file leaf-file-name="AdminSceneController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/controller/AdminSceneController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="98" column="4" lean-forward="false" selection-start-line="98" selection-start-column="4" selection-end-line="98" selection-end-column="4" />
+            <state relative-caret-position="346">
+              <caret line="163" column="44" lean-forward="false" selection-start-line="163" selection-start-column="44" selection-end-line="163" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3597#3598#0" expanded="true" />
-                <element signature="e#3651#3652#0" expanded="true" />
+                <element signature="e#4284#4285#0" expanded="true" />
+                <element signature="e#4338#4339#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Car.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/Car.java">
+      <file leaf-file-name="EditVehicleScene.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/view/EditVehicleScene.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdminScene.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/view/AdminScene.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="9" column="147" lean-forward="false" selection-start-line="9" selection-start-column="147" selection-end-line="9" selection-end-column="147" />
+            <state relative-caret-position="252">
+              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -98,28 +93,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+      <file leaf-file-name="EditVehicleSceneController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/EditVehicleSceneController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="18" column="14" lean-forward="false" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1085#1086#0" expanded="true" />
-                <element signature="e#1113#1114#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddNewVehicleSceneController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/AddNewVehicleSceneController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="118" column="40" lean-forward="true" selection-start-line="118" selection-start-column="40" selection-end-line="118" selection-end-column="40" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="42">
+              <caret line="2" column="39" lean-forward="false" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -129,8 +108,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -156,7 +135,6 @@
         <option value="$PROJECT_DIR$/src/source/Main.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/sranje/Main.java" />
-        <option value="$PROJECT_DIR$/src/view/AdminScene.fxml" />
         <option value="$PROJECT_DIR$/src/view/novi.fxml" />
         <option value="$PROJECT_DIR$/src/view/Main.java" />
         <option value="$PROJECT_DIR$/src/view/AddNewVehicleScene.fxml" />
@@ -164,7 +142,6 @@
         <option value="$PROJECT_DIR$/src/resources/properties.txt" />
         <option value="$PROJECT_DIR$/src/model/Garage.java" />
         <option value="$PROJECT_DIR$/src/resources/Obaveze.txt" />
-        <option value="$PROJECT_DIR$/src/model/Platform.java" />
         <option value="$PROJECT_DIR$/src/main/Main.java" />
         <option value="$PROJECT_DIR$/src/controller/AddNewVehicleSceneController.java" />
         <option value="$PROJECT_DIR$/src/model/Car.java" />
@@ -178,6 +155,9 @@
         <option value="$PROJECT_DIR$/src/model/PoliceVehicle.java" />
         <option value="$PROJECT_DIR$/src/model/Van.java" />
         <option value="$PROJECT_DIR$/src/model/Vehicle.java" />
+        <option value="$PROJECT_DIR$/src/view/AdminScene.fxml" />
+        <option value="$PROJECT_DIR$/src/model/Platform.java" />
+        <option value="$PROJECT_DIR$/src/view/EditVehicleScene.fxml" />
         <option value="$PROJECT_DIR$/src/controller/AdminSceneController.java" />
       </list>
     </option>
@@ -488,8 +468,9 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2552486" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32154697" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0010416667" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -532,30 +513,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/model/Car.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="67" lean-forward="false" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/HighPriorityVehicle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="11" lean-forward="false" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/PoliceVehicle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/PoliceMotorcycle.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -711,17 +668,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Field.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <element signature="e#226#227#0" expanded="true" />
-            <element signature="e#266#267#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/MedicalCar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -751,16 +697,6 @@
         <state relative-caret-position="147">
           <caret line="7" column="18" lean-forward="false" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Platform.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="48" column="36" lean-forward="false" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -824,17 +760,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/AdminScene.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="147" lean-forward="false" selection-start-line="9" selection-start-column="147" selection-end-line="9" selection-end-column="147" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Vehicle.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
@@ -846,24 +771,83 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Field.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="e#226#227#0" expanded="true" />
+            <element signature="e#266#267#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/AddNewVehicleSceneController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="118" column="40" lean-forward="true" selection-start-line="118" selection-start-column="40" selection-end-line="118" selection-end-column="40" />
+        <state relative-caret-position="252">
+          <caret line="114" column="91" lean-forward="false" selection-start-line="114" selection-start-column="67" selection-end-line="114" selection-end-column="91" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/AdminSceneController.java">
+    <entry file="file://$PROJECT_DIR$/src/model/Platform.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="98" column="4" lean-forward="false" selection-start-line="98" selection-start-column="4" selection-end-line="98" selection-end-column="4" />
+        <state relative-caret-position="546">
+          <caret line="77" column="64" lean-forward="false" selection-start-line="77" selection-start-column="64" selection-end-line="77" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3597#3598#0" expanded="true" />
-            <element signature="e#3651#3652#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/AdminScene.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="23" column="116" lean-forward="false" selection-start-line="23" selection-start-column="116" selection-end-line="23" selection-end-column="116" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/EditVhicleSceneController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="38" lean-forward="false" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/EditVehicleSceneController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="39" lean-forward="false" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/EditVehicleScene.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/AdminSceneController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="163" column="44" lean-forward="false" selection-start-line="163" selection-start-column="44" selection-end-line="163" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4284#4285#0" expanded="true" />
+            <element signature="e#4338#4339#0" expanded="true" />
           </folding>
         </state>
       </provider>

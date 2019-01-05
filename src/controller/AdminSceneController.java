@@ -9,14 +9,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import main.Main;
-import model.Garage;
-import model.Platform;
-import model.Vehicle;
+import model.*;
 
 import java.io.File;
 import java.net.URL;
@@ -35,7 +34,8 @@ public class AdminSceneController implements Initializable{
     @FXML private TableColumn<Vehicle, Integer> y = new TableColumn<>();
     @FXML private TableColumn<Vehicle, String> motorNum = new TableColumn<>();
     @FXML private TableColumn<Vehicle, String> image = new TableColumn<>();
-
+    @FXML private Button addVehicleBtn;
+    @FXML private Button deleteVehicle;
 
 
 
@@ -54,11 +54,18 @@ public class AdminSceneController implements Initializable{
 
         platformToChoose.getSelectionModel().selectFirst();
         initializeTableFromSerialization();
+        Vehicle vehicle1=new Car("BMW","12","34","45",new File(""),2,0,0,3);
+        Vehicle vehicle2=new Motorcycle("HONDA","3123","3456","4555",new File(""),3,0,0);
+        Vehicle vehicle3=new Van("MERCEDES","1002","0034","4005",new File(""),4,0,0,3);
+        Garage.platforms[0].addVehicleToPlatform(vehicle1);
+        Garage.platforms[0].addVehicleToPlatform(vehicle2);
+        Garage.platforms[0].addVehicleToPlatform(vehicle3);
+        vehiclesForTable.addAll(vehicle1,vehicle2,vehicle3);
         staticTable=table;
         table.setItems(vehiclesForTable);
         setTable();
-
-
+        addVehicleBtn.setStyle("-fx-background-color: cyan");
+        deleteVehicle.setStyle("-fx-background-color: crimson ");
 
     }
 
@@ -109,15 +116,15 @@ public class AdminSceneController implements Initializable{
 
     }
 
-    public void addVehicle(ActionEvent actionEvent) throws Exception {
-        if(vehicleToChoose.getSelectionModel().getSelectedItem()==null){
+    public void addVehicleBtn(ActionEvent actionEvent) throws Exception {
+        selectedVehicle=vehicleToChoose.getSelectionModel().getSelectedItem();
+        if(selectedVehicle==null){
             Main.warning("You mast choose vehicle");
 
         }
         else{
-            selectedVehicle=vehicleToChoose.getSelectionModel().getSelectedItem();
-            selectedNumberOfPlatform=platformToChoose.getSelectionModel().getSelectedItem();
 
+            selectedNumberOfPlatform=platformToChoose.getSelectionModel().getSelectedItem();
             Parent root = FXMLLoader.load(getClass().getResource(".."+File.separator+"view"+ File.separator+"AddNewVehicleScene.fxml"));
             Main.primaryStage.setScene(new Scene(root));
             Main.primaryStage.setTitle("Add new vehicle");
@@ -126,6 +133,39 @@ public class AdminSceneController implements Initializable{
 
         }
 
+
+    }
+    public void deleteVehicleBtn(ActionEvent actionEvent){
+        Vehicle vehicleToDelete=table.getSelectionModel().getSelectedItem();
+        if(vehicleToDelete==null)
+            Main.warning("You mast choose vehicle to delete");
+
+        else{
+            Garage.platforms[platformToChoose.getSelectionModel().getSelectedItem()].deleteVehicleFromPlatform(vehicleToDelete);
+            vehiclesForTable.remove(vehicleToDelete);
+            showInTable();
+        }
+    }
+    public void showPlatformBtn(ActionEvent actionEvent){
+        vehiclesForTable.removeAll(vehiclesForTable);
+        Platform platform=Garage.platforms[platformToChoose.getSelectionModel().getSelectedItem()];
+        for(int i=0;i<Platform.NUM_OF_ROWS;i++)
+            for(int j=0;j<Platform.NUM_OF_COLUMNS;j++){
+            if(platform.getFields()[i][j].getVehicleFromField()!=null)
+                vehiclesForTable.add(platform.getFields()[i][j].getVehicleFromField());
+            }
+            showInTable();
+    }
+
+    public void editVehicleBtn(ActionEvent actionEvent){
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource(".." + File.separator + "view" + File.separator + "EditVehicleScene.fxml"));
+            Main.primaryStage.setScene(new Scene(root));
+            Main.primaryStage.setTitle("Edit vehicle");
+            Main.primaryStage.show();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
 
     }
 }
