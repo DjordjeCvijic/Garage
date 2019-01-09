@@ -12,4 +12,7 @@ public class PoliceCar extends PoliceVehicle {
     }
 
     public int getNumberOfDoors(){return numberOfDoors;}
+    public void setNumberOfDoors(int numberOfDoors) {
+        this.numberOfDoors = numberOfDoors;
+    }
 }

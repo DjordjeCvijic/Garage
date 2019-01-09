@@ -16,5 +16,6 @@ public class MedicalVan extends HighPriorityVehicle {
     }
 
     public int getCapacity(){return capacity;}
+    public void  setCapacity(int tmp){capacity=tmp;}
 
 }

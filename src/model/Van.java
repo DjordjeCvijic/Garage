@@ -11,4 +11,5 @@ public class Van extends Vehicle{
     }
 
     public int getCapacity(){return capacity;}
+    public void  setCapacity(int tmp){capacity=tmp;}
 }

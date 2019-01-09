@@ -14,4 +14,7 @@ public abstract class HighPriorityVehicle extends Vehicle{
     }
 
     public boolean isRotationOn(){return rotationOn;}
+    public void setRotationOn(boolean tmp){
+        rotationOn=tmp;
+    }
 }

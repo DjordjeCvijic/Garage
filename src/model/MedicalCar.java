@@ -15,4 +15,7 @@ public class MedicalCar extends HighPriorityVehicle{
     }
 
     public int getNumberOfDoors(){return numberOfDoors;}
+    public void setNumberOfDoors(int numberOfDoors) {
+        this.numberOfDoors = numberOfDoors;
+    }
 }

@@ -11,4 +11,5 @@ public class PoliceVan extends PoliceVehicle {
     }
 
     public int getCapacity(){return capacity;}
+    public void  setCapacity(int tmp){capacity=tmp;}
 }

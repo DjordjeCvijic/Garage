@@ -1,8 +1,9 @@
 package model;
 import java.io.File;
+import java.io.Serializable;
 
 
-public abstract class Vehicle {
+public abstract class Vehicle implements Serializable{
     private String nameOfVehicle;//car,police car,medical..
     private String chassisNumber;  //1234
     private String motorNumber;  ///12345
@@ -26,9 +27,37 @@ public abstract class Vehicle {
         platformNumber=platformNum;
     }
 
-    public String getTypeOfVehicle(){return nameOfVehicle;}
     public String getChassisNumber(){return chassisNumber;}
     public String getMotorNumber(){return motorNumber;}
+
+    public void setChassisNumber(String chassisNumber) {
+        this.chassisNumber = chassisNumber;
+    }
+
+    public void setMotorNumber(String motorNumber) {
+        this.motorNumber = motorNumber;
+    }
+
+    public void setRegistrationNumber(String registrationNumber) {
+        this.registrationNumber = registrationNumber;
+    }
+
+    public void setImage(File image) {
+        this.image = image;
+    }
+
+    public void setPlatformNumber(int platformNumber) {
+        this.platformNumber = platformNumber;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
     public String getRegistrationNumber(){return registrationNumber;}
     public void setNameOfVehicle(String s){nameOfVehicle=s;}
     public String getNameOfVehicle(){return nameOfVehicle;}
@@ -38,9 +67,10 @@ public abstract class Vehicle {
 
     public String getMark(){return mark;}
     public void setMark(String tmp){mark=tmp;}
+    public int getPlatformNumber(){return platformNumber;}
 
     @Override
     public String toString() {
-        return nameOfVehicle;
+        return nameOfVehicle+platformNumber+"koordinate:"+x+y+mark;
     }
 }

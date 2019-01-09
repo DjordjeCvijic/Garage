@@ -119,6 +119,13 @@ public class AddNewVehicleSceneController implements Initializable{
                 AdminSceneController.showInTable();
                 Main.warning("Vehicle successfully added!");
 
+                for(int i=0; i<Platform.NUM_OF_ROWS; i++){
+                    for(int j=0; j<Platform.NUM_OF_COLUMNS; j++){if(Garage.platforms[0].getFields()[i][j].getVehicleFromField()!=null)
+                        System.out.println( Garage.platforms[0].getFields()[i][j].getVehicleFromField());
+                    }
+                }
+
+
 
             }
 

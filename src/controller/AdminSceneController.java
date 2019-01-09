@@ -55,13 +55,13 @@ public class AdminSceneController implements Initializable{
 
         platformToChoose.getSelectionModel().selectFirst();
         initializeTableFromSerialization();
-        Vehicle vehicle1=new Car("BMW","12","34","45",new File(""),2,0,0,3);
+         /*Vehicle vehicle1=new Car("BMW","12","34","45",new File(""),2,0,0,3);
         Vehicle vehicle2=new Motorcycle("HONDA","3123","3456","4555",new File(""),3,0,0);
         Vehicle vehicle3=new Van("MERCEDES","1002","0034","4005",new File(""),4,0,0,3);
-        Garage.platforms[0].addVehicleToPlatform(vehicle1);
+       Garage.platforms[0].addVehicleToPlatform(vehicle1);
         Garage.platforms[0].addVehicleToPlatform(vehicle2);
         Garage.platforms[0].addVehicleToPlatform(vehicle3);
-        vehiclesForTable.addAll(vehicle1,vehicle2,vehicle3);
+        vehiclesForTable.addAll(vehicle1,vehicle2,vehicle3);*/
         staticTable=table;
         table.setItems(vehiclesForTable);
         setTable();
@@ -71,7 +71,7 @@ public class AdminSceneController implements Initializable{
     }
 
     public void initializeTableFromSerialization(){
-        File tmp=new File(".."+ File.separator+"resources"+File.separator+"garaza.ser");
+        File tmp=new File("src"+File.separator+"resources"+ File.separator+"garaza.ser");
         if(tmp.exists()){
             ArrayList<Platform> platforms=Platform.deserializationOfThePlatform();
             int i=0;
@@ -90,6 +90,7 @@ public class AdminSceneController implements Initializable{
 
         }
 
+        else System.out.println("nije nasao");
 
 
 
@@ -172,6 +173,23 @@ public class AdminSceneController implements Initializable{
                  e.printStackTrace();
              }
          }
+
+    }
+
+    public void runUserApplicationBtn(ActionEvent actionEvent) {
+        ArrayList<Platform>platforms=new ArrayList<>();
+        for(Platform p:Garage.platforms)
+            platforms.add(p);
+        Platform.serializationOfThePlatform(platforms);
+
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource(".." + File.separator + "view" + File.separator + "UserScene.fxml"));
+            Main.primaryStage.setScene(new Scene(root));
+            Main.primaryStage.setTitle("Edit vehicle");
+            Main.primaryStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 }

@@ -14,4 +14,5 @@ public class FireVan extends HighPriorityVehicle {
     }
 
     public int getCapacity(){return capacity;}
+    public void  setCapacity(int tmp){capacity=tmp;}
 }

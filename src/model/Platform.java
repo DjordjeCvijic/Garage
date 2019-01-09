@@ -47,7 +47,7 @@ public class Platform implements Serializable{
     }
 
     public static void serializationOfThePlatform(ArrayList<Platform>platforms){
-        try(ObjectOutputStream out=new ObjectOutputStream(new FileOutputStream(".."+ File.separator+"resources"+File.separator+"garaza.ser"))){
+        try(ObjectOutputStream out=new ObjectOutputStream(new FileOutputStream("src"+File.separator+"resources"+ File.separator+"garaza.ser"))){
             out.writeObject(platforms);
 
         }catch(Exception e){
@@ -56,7 +56,7 @@ public class Platform implements Serializable{
     }
 
     public static ArrayList<Platform> deserializationOfThePlatform(){
-        try(ObjectInputStream in=new ObjectInputStream(new FileInputStream(".."+ File.separator+"resources"+File.separator+"garaza.ser"))){
+        try(ObjectInputStream in=new ObjectInputStream(new FileInputStream("src"+File.separator+"resources"+ File.separator+"garaza.ser"))){
             ArrayList<Platform> platforms=(ArrayList<Platform>) in.readObject();
             return platforms;
         }catch(Exception e){
@@ -77,12 +77,19 @@ public class Platform implements Serializable{
         numberOfAvailableParkingFields++;
         fields[vehicle.getX()][vehicle.getY()].setAvailable(true);
     }
+    public void editVehicle(Vehicle vehicle,int i,int j){
+        fields[i][j].setVehicleOnField(null);
+        currentMarks[i][j]="*";
+        fields[i][j].setAvailable(true);
+        numberOfAvailableParkingFields++;
+        addVehicleToPlatform(vehicle);
+    }
 
     public Field[][] getFields(){return fields;}
 
-
-
-
+    public void setCurrentMarks(int i,int j,String s) {
+        currentMarks[i][j]=s;
+    }
 
 
 }
