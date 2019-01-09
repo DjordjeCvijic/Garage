@@ -13,5 +13,5 @@ public class FireVan extends HighPriorityVehicle {
         setMark("F");
     }
 
-    int getCapacity(){return capacity;}
+    public int getCapacity(){return capacity;}
 }

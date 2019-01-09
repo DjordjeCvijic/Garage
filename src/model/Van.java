@@ -10,5 +10,5 @@ public class Van extends Vehicle{
         this.capacity=capacity;
     }
 
-    int getCapacity(){return capacity;}
+    public int getCapacity(){return capacity;}
 }

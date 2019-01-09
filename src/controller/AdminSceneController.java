@@ -45,6 +45,7 @@ public class AdminSceneController implements Initializable{
     public static String selectedVehicle;//vozilo koje je izabrano iz padajuceg menija
     public static int selectedNumberOfPlatform;
     public static ObservableList<Vehicle> vehiclesForTable = FXCollections.observableArrayList();
+    public static Vehicle vehicleToEdit;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -158,14 +159,19 @@ public class AdminSceneController implements Initializable{
     }
 
     public void editVehicleBtn(ActionEvent actionEvent){
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource(".." + File.separator + "view" + File.separator + "EditVehicleScene.fxml"));
-            Main.primaryStage.setScene(new Scene(root));
-            Main.primaryStage.setTitle("Edit vehicle");
-            Main.primaryStage.show();
-        }catch(Exception e){
-            e.printStackTrace();
-        }
+         vehicleToEdit=table.getSelectionModel().getSelectedItem();
+         if(vehicleToEdit==null)
+             Main.warning("You mast choose vehicle to edit");
+         else {
+             try {
+                 Parent root = FXMLLoader.load(getClass().getResource(".." + File.separator + "view" + File.separator + "EditVehicleScene.fxml"));
+                 Main.primaryStage.setScene(new Scene(root));
+                 Main.primaryStage.setTitle("Edit vehicle");
+                 Main.primaryStage.show();
+             } catch (Exception e) {
+                 e.printStackTrace();
+             }
+         }
 
     }
 }
